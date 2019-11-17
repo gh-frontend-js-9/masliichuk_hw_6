@@ -63,4 +63,28 @@ getEmployee(callback);
 
 //Create a function that will replace all number dividing three with ‘foo’, dividing seven with ‘bar’ and dividing three and seven with ‘foobar’. Function with n params.
 
+function replace(array,callback){
+  for (let i = 0; i < array.length; i++){
+    if (array[i] == 0) {
+      continue;
+    }
+    if ( (array[i] % 3 == 0 ) && (array[i] % 7 == 0 )){
+      array[i] = 'foobar';
+    } else
+    if (array[i] % 3 == 0){
+      array[i] = 'foo';
+    } else
+    if (array[i] % 7 == 0){
+      array[i] = 'bar';
+    }
+  }
+  callback(array);
+}
+
+function callback(array){
+  alert(array);
+  alert('Array replaced!');
+
+}
+
 //Create function with 2 string params. It must check if letters in the first correspond to the number of matches in second and return %
