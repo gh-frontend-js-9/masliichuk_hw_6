@@ -88,3 +88,17 @@ function callback(array){
 }
 
 //Create function with 2 string params. It must check if letters in the first correspond to the number of matches in second and return %
+
+function charsPercentage(str1,str2){
+  let count = 0;
+  for (let i = 0; i< str1.length; i++){
+    for (let j = 0; j<str2.length; j++){
+      if (str1[i] === str2[j]) {
+        console.log(str1[i] + ' - ' + str2[j]);
+        count++;
+      }
+    }
+  }
+
+  return count/(str1.length + str2.length) * 100 + '%';
+}
